@@ -1,12 +1,12 @@
 package com.moris.resto.controller;
 
+import com.moris.resto.controller.api.UtilisateurApi;
 import com.moris.resto.dto.UtilisateurDto;
 import com.moris.resto.security.PermissionHandle;
 import com.moris.resto.service.UtilisateurService;
 import com.moris.resto.user.Utilisateur;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/utilisateur")
-public class UtilisateurController implements UtilisateurApi{
+public class UtilisateurController implements UtilisateurApi {
     private final UtilisateurService utilisateurService;
     private final PermissionHandle permissionHandle;
 
