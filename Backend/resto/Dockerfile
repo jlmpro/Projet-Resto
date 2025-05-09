@@ -11,7 +11,7 @@ COPY pom.xml .
 RUN mvn dependency:go-offline
 
 # Copier tout le code source dans le conteneur
-COPY src ./src
+COPY /Backend/resto/src ./src
 
 # Construire le JAR de l'application Spring Boot
 RUN mvn clean package -DskipTests
