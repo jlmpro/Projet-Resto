@@ -1,5 +1,6 @@
 package com.moris.resto.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.moris.resto.enums.EtatCommande;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,8 +24,16 @@ public class CommandeClient extends AbstractEntity{
     @Column(name = "etat_commande")
     private EtatCommande etatCommande;
 
+    @Column(name = "commentaire")
+    private String commentaire;
+
+    @Column(name = "utilisateur_id")
+    private Long utilisateurId;
+
+
     @OneToMany(mappedBy = "commandeClient")
     @ToString.Exclude
+    @JsonIgnore
     private List<LigneCommandeClient> ligneCommandeClients;
 
 
@@ -53,6 +62,21 @@ public class CommandeClient extends AbstractEntity{
         this.ligneCommandeClients = ligneCommandeClients;
     }
 
+    public Long getUtilisateurId() {
+        return utilisateurId;
+    }
+
+    public void setUtilisateurId(Long utilisateurId) {
+        this.utilisateurId = utilisateurId;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+    }
 
     public Instant getDateCommande() {
         return dateCommande;

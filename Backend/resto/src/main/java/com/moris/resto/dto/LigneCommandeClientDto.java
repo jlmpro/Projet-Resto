@@ -5,10 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.moris.resto.entity.LigneCommandeClient;
 import com.moris.resto.entity.Plat;
-import lombok.Builder;
-import lombok.Data;
 
-import java.math.BigDecimal;
 
 
 public class LigneCommandeClientDto {
@@ -103,15 +100,15 @@ public class LigneCommandeClientDto {
             return null;
         }
 
-        Long articleDto = null;
+        Long idPlat = null;
         if (ligneCommandeClient.getPlat() != null) {
-            articleDto = ligneCommandeClient.getPlat().getId();
+            idPlat = ligneCommandeClient.getPlat().getId();
         }
 
         return LigneCommandeClientDto.builder()
                 .id(ligneCommandeClient.getId())
                 .quantite(ligneCommandeClient.getQuantite())
-                .idPlat(articleDto)
+                .idPlat(idPlat)
                 .build();
     }
 

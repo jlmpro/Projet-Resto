@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 import static com.moris.resto.enums.TypePermission.*;
 
-@AllArgsConstructor
 public enum TypeDeRole {
 
     SERVEUR(

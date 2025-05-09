@@ -9,7 +9,6 @@ import java.util.Objects;
 
 
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "lignecommandeclient")
 public class LigneCommandeClient extends AbstractEntity {
@@ -21,6 +20,7 @@ public class LigneCommandeClient extends AbstractEntity {
     private CommandeClient commandeClient;
     @Column(name = "QUANTITE")
     private Long quantite;
+
 
 
     @Override

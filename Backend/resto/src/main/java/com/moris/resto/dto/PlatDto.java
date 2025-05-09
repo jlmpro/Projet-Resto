@@ -2,16 +2,14 @@ package com.moris.resto.dto;
 
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.moris.resto.entity.Plat;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 
-@Builder
+
 @Data
 @NoArgsConstructor
 public class PlatDto {
@@ -57,8 +55,10 @@ public class PlatDto {
             return null ;
         }
            PlatDto platDto = new PlatDto();
-                platDto.setLibelle(platDto.getLibelle());
-                platDto.setPrix(platDto.getPrix());
+                platDto.setId(plat.getId());
+                platDto.setLibelle(plat.getLibelle());
+                platDto.setPrix(plat.getPrix());
+                platDto.setCodePlat(plat.getCodePlat());
 
                 return platDto;
     }
@@ -69,6 +69,7 @@ public class PlatDto {
         }
             Plat plat = new Plat();
             plat.setId(dto.getId());
+            plat.setLibelle(dto.getLibelle());
             plat.setPrix(dto.getPrix());
             plat.setCodePlat(dto.getCodePlat());
 

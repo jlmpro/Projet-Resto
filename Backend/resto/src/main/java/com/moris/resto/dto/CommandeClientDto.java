@@ -3,6 +3,7 @@ package com.moris.resto.dto;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.moris.resto.entity.CommandeClient;
 import com.moris.resto.entity.LigneCommandeClient;
 import com.moris.resto.enums.EtatCommande;
@@ -20,9 +21,11 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class CommandeClientDto {
     private Long id ;
-    private String code;
     private Instant dateCommande;
+    @JsonIgnore
     private EtatCommande etatCommande;
+    private String commentaire;
+
 
     private List<LigneCommandeClientDto> ligneCommandeClients;
 
@@ -34,12 +37,12 @@ public class CommandeClientDto {
         this.id = id;
     }
 
-    public String getCode() {
-        return code;
+    public String getCommentaire() {
+        return commentaire;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
     }
 
     public Instant getDateCommande() {
@@ -76,6 +79,7 @@ public class CommandeClientDto {
         dto.setId(commandeClient.getId());
         dto.setDateCommande(commandeClient.getDateCommande());
         dto.setEtatCommande(commandeClient.getEtatCommande());
+        dto.setCommentaire(commandeClient.getCommentaire());
 
         dto.setLigneCommandeClients(
                 commandeClient.getLigneCommandeClients() != null
@@ -97,6 +101,7 @@ public class CommandeClientDto {
         CommandeClient entity = new CommandeClient();
         entity.setDateCommande(dto.getDateCommande());
         entity.setEtatCommande(dto.getEtatCommande());
+        entity.setCommentaire(dto.getCommentaire());
 
 
         if (dto.getLigneCommandeClients() != null) {

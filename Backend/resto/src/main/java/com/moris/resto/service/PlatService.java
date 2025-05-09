@@ -38,18 +38,14 @@ public class PlatService {
 
     }
 
-    public ResponseEntity<?> listPlats(){
+    public ResponseEntity<?> listPlats() {
         List<Plat> plats = platRepository.findAll();
-
-        if(plats.isEmpty()){
-            Map<String, String> response = Map.of("message", "Aucun plat trouvé dans la base de données");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-        }
         List<PlatDto> platDtos = plats.stream()
                 .map(PlatDto::fromEntity)
-                .collect(Collectors.toList());
+                .toList();
         return ResponseEntity.ok(platDtos);
     }
+
 
     public ResponseEntity<?> save(PlatDto platDto) {
         List<String> errors = PlatValidator.validate(platDto);

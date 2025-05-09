@@ -22,7 +22,7 @@ public interface UtilisateurApi {
     Utilisateur findById(Integer id);
 
     @PreAuthorize(value = "hasAnyAuthority('UTILISATEUR_CUISINIER','UTILISATEUR_SERVEUR')")
-    @GetMapping(value = "/find/all")
+    @GetMapping(value = "/list")
     @Operation(summary = "Liste des utilisateur")
     List<UtilisateurDto> findAll();
 

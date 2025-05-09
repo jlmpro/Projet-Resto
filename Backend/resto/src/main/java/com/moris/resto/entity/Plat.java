@@ -1,5 +1,6 @@
 package com.moris.resto.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -13,6 +14,7 @@ public class Plat extends AbstractEntity{
     private Long prix ;
     private String codePlat;
     @OneToMany(mappedBy = "plat")
+    @JsonIgnore
     private List<LigneCommandeClient> lignesCommande;
 
     public String getCodePlat() {
