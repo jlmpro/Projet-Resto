@@ -35,6 +35,7 @@ public class SecurityConfiguration {
                     auth.requestMatchers(
                                     "/auth/**",
                                     "/healthy",
+                                    "/demo-controller",
                                     "/authenticate",
                                     "/auth/authenticate")
                             .permitAll() // Routes publiques
