@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/table-du-chef
-    username: postgres
-    password: pgadmin
+    url: jdbc:postgresql://dpg-d0elu5adbo4c738qgn90-a.oregon-postgres.render.com/resto_postgresql_tdc
+    username: resto_postgresql_tdc_user
+    password: 8c5LmxuQtdSQduqyw59Kr1RqsNvk9y29
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -48,6 +48,17 @@ server:
   port: 8085
   servlet:
     context-path: /api
+
+postgresql://resto_postgresql_tdc_user:8c5LmxuQtdSQduqyw59Kr1RqsNvk9y29@dpg-d0elu5adbo4c738qgn90-a:
+  oregon-postgres:
+    render:
+      com/resto_postgresql_tdc:
+#    postgresql://resto_postgresql_tdc_user:8c5LmxuQtdSQduqyw59Kr1RqsNvk9y29@dpg-d0elu5adbo4c738qgn90-a:
+#      oregon-postgres:
+#        render:
+#          com/resto_postgresql_tdc:
+#            PGPASSWORD=8c5LmxuQtdSQduqyw59Kr1RqsNvk9y29 psql -h dpg-d0elu5adbo4c738qgn90-a.oregon-postgres.render.com -U resto_postgresql_tdc_user resto_postgresql_tdc
+#
 
 
 
